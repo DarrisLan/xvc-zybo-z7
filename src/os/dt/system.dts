@@ -1,0 +1,20 @@
+// refer here
+// https://qiita.com/7of9/items/43e650f2e7d9c55da175
+&gem0 {
+  #address-cells = <1>;
+  phy-handle = <&phy0>;
+  phy-mode = "rgmii-id";
+  reg = <0xe000b000 0x1000>;
+  xlnx,eth-mode = <0x1>;
+  xlnx,has-mdio = <0x1>;
+  xlnx,ptp-enet-clock = <108333336>;
+  mdio {
+    #address-cells = <0x1>;
+    #size-cells = <0x0>;
+    phy0: phy@1 {
+      compatible = "realtek,RTL8211E";
+      device_type = "ethernet-phy";
+      reg = <1>;
+      } ;
+  } ;
+};
